@@ -1,2 +1,3 @@
+THISDIR=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 all:
-	gcc -Wall hello_world.c -o hello_world
+	gcc -Wall $(THISDIR)hello_world.c -o $(THISDIR)hello_world
