@@ -1,2 +1,3 @@
+THISDIR=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 all:
-	javac HellowWorld.java
+	javac $(THISDIR)HelloWorld.java

@@ -1,5 +1,11 @@
-language: c
 sudo: false
-script:
-  - make -f ./src/c/Makefile
-  - ./src/c/hello_world
+matrix:
+  include:
+    language: c
+    script:
+      - make -f ./src/c/Makefile
+      - ./src/c/hello_world
+    language: java
+    script:
+      - make -f ./src/java/Makefile
+      - java -cp src/java/ HelloWorld
