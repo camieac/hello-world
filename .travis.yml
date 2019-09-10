@@ -11,4 +11,4 @@ matrix:
       - java -cp src/java/ HelloWorld
     language: elm
     script:
-      - make -f ./src/elm/Makefile
+      - cd src/elm && make
