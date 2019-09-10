@@ -9,3 +9,6 @@ matrix:
     script:
       - make -f ./src/java/Makefile
       - java -cp src/java/ HelloWorld
+    language: elm
+    script:
+      - make -f ./src/elm/Makefile
