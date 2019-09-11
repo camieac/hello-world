@@ -5,13 +5,23 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
-    
+    runs-on: ubuntu-18.04
+
     steps:
     - uses: actions/checkout@v1
-    - name: C Build
-      run: make -f ./src/c/Makefile
-    - name: Java Build
-      run: make -f ./src/java/Makefile
-    - name: Elm Build
-      run: cd src/elm && make
+    - name: c-compile
+      run: |
+        make -f ./src/c/Makefile
+        ./src/c/hello_world
+    - name: elm-compile
+      run: |
+        sudo apt-get update
+        sudo apt-get install npm
+        sudo npm install elm --global
+        cd ./src/elm && make
+
+    - name: java-compile
+      run: |
+        make -f ./src/java/Makefile
+        java -cp src/java/ HelloWorld
+
