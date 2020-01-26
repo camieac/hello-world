@@ -1,5 +1,6 @@
 sudo: false
-matrix:
+os: linux
+jobs:
   include:
     language: c
     script:
@@ -12,7 +13,9 @@ matrix:
     language: elm
     script:
       - cd src/elm && make
-    language: kotlin
+    language: java
     script:
+      - curl -s https://get.sdkman.io | bash
+      - sdk install kotlin
       - cd src/kotlin && make
       - java -jar src/kotlin/hello_world.kt
