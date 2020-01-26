@@ -12,3 +12,7 @@ matrix:
     language: elm
     script:
       - cd src/elm && make
+    language: kotlin
+    script:
+      - cd src/kotlin && make
+      - java -jar src/kotlin/hello_world.kt
