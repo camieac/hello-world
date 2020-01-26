@@ -19,4 +19,4 @@ jobs:
       - source "/home/travis/.sdkman/bin/sdkman-init.sh"
       - sdk install kotlin
       - cd src/kotlin && make
-      - java -jar src/kotlin/hello_world.kt
+      - java -jar src/kotlin/hello_world.jar
