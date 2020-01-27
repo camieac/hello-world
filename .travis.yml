@@ -20,5 +20,5 @@ jobs:
       - curl -s https://get.sdkman.io | bash
       - source "/home/travis/.sdkman/bin/sdkman-init.sh"
       - sdk install kotlin
-      - cd src/kotlin && make
+      - make -f ./src/kotlin/Makefile
       - java -jar ./src/kotlin/hello_world.jar
