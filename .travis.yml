@@ -22,3 +22,10 @@ jobs:
       - sdk install kotlin
       - make -f ./src/kotlin/Makefile
       - java -jar ./src/kotlin/hello_world.jar
+    # Prolog
+    language: bash
+    install:
+      - sudo apt-get install gprolog    
+    script:
+      - make -f ./src/prolog/Makefile
+      - ./src/prolog/hello_world
