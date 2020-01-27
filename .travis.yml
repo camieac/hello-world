@@ -2,30 +2,30 @@ sudo: false
 os: linux
 jobs:
   include:
-    language: c
-    script:
-      - make -f ./src/c/Makefile
-      - ./src/c/hello_world
-    language: java
-    script:
-      - make -f ./src/java/Makefile
-      - java -cp src/java/ HelloWorld
-    language: elm
-    script:
-      - cd src/elm && make
-    language: java
-    jdk:
-      - oraclejdk9
-    script:
-      - curl -s https://get.sdkman.io | bash
-      - source "/home/travis/.sdkman/bin/sdkman-init.sh"
-      - sdk install kotlin
-      - make -f ./src/kotlin/Makefile
-      - java -jar ./src/kotlin/hello_world.jar
+    - language: c
+      script:
+        - make -f ./src/c/Makefile
+        - ./src/c/hello_world
+    - language: java
+      script:
+        - make -f ./src/java/Makefile
+        - java -cp src/java/ HelloWorld
+    - language: elm
+      script:
+        - cd src/elm && make
+    - language: java
+      jdk:
+        - oraclejdk9
+      script:
+        - curl -s https://get.sdkman.io | bash
+        - source "/home/travis/.sdkman/bin/sdkman-init.sh"
+        - sdk install kotlin
+        - make -f ./src/kotlin/Makefile
+        - java -jar ./src/kotlin/hello_world.jar
     # Prolog
-    language: bash
-    install:
-      - sudo apt-get install gprolog    
-    script:
-      - make -f ./src/prolog/Makefile
-      - ./src/prolog/hello_world
+    - language: bash
+      install:
+        - sudo apt-get install gprolog    
+      script:
+        - make -f ./src/prolog/Makefile
+        - ./src/prolog/hello_world
