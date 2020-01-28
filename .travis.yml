@@ -47,3 +47,10 @@ jobs:
       script:
         - make -f ./src/go/Makefile
         - ./src/go/hello_world
+    # Cobol
+    - language: bash
+      install:
+        - sudo apt-get install open-cobol
+      script:
+        - make -f ./src/cobol/Makefile
+        - ./src/cobol/hello_world
