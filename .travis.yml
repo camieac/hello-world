@@ -40,3 +40,8 @@ jobs:
       script:
         - make -f ./src/cpp/Makefile
         - ./src/cpp/hello_world
+    # Go
+    - language: go
+      script:
+        - make -f ./src/cpp/Makefile
+        - ./src/go/hello_world
