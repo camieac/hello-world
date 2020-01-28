@@ -43,5 +43,5 @@ jobs:
     # Go
     - language: go
       script:
-        - make -f ./src/cpp/Makefile
+        - make -f ./src/go/Makefile
         - ./src/go/hello_world
