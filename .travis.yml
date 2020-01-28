@@ -2,17 +2,21 @@ sudo: false
 os: linux
 jobs:
   include:
+    # C
     - language: c
       script:
         - make -f ./src/c/Makefile
         - ./src/c/hello_world
+    # Java
     - language: java
       script:
         - make -f ./src/java/Makefile
         - java -cp src/java/ HelloWorld
+    # Elm
     - language: elm
       script:
         - cd src/elm && make
+    # Kotlin
     - language: java
       jdk:
         - oraclejdk9
@@ -29,3 +33,10 @@ jobs:
       script:
         - make -f ./src/prolog/Makefile
         - ./src/prolog/hello_world
+    # C++
+    - language: cpp
+      compiler:
+        - gcc
+      script:
+        - make -f ./src/cpp/Makefile
+        - ./src/cpp/hello_world
