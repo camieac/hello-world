@@ -1,3 +1,3 @@
 THISDIR=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 all:
-	cobc -o $(THISDIR)hello_world $(THISDIR)hello_world.cbl
+	cobc -free -x -o $(THISDIR)hello_world $(THISDIR)hello_world.cbl
