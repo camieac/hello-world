@@ -55,7 +55,7 @@ jobs:
         - make -f ./src/cobol/Makefile
         - ./src/cobol/hello_world
     # Scala
-    language: scala
+    - language: scala
       script:
         - make -f ./src/scala/Makefile
         - ./src/scala/hello_world
