@@ -56,6 +56,10 @@ jobs:
         - ./src/cobol/hello_world
     # Scala
     - language: scala
+      install:
+        - curl -s https://get.sdkman.io | bash
+        - source "/home/travis/.sdkman/bin/sdkman-init.sh"
+        - sdk install scala
       script:
         - make -f ./src/scala/Makefile
-        - ./src/scala/hello_world
+        - scala -cp ./src/scala/ HelloWorld
